@@ -21,8 +21,6 @@
 		73BA4AFF1B66C33300EF8213 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73BA4B011B66C33300EF8213 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BA4B041B66C33300EF8213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		73BA4B0F1B66C33300EF8213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73BA4B101B66C33300EF8213 /* SystemExplorerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemExplorerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +38,6 @@
 			isa = PBXGroup;
 			children = (
 				73BA4AF91B66C33300EF8213 /* SystemExplorer */,
-				73BA4B0D1B66C33300EF8213 /* SystemExplorerTests */,
 				73BA4AF81B66C33300EF8213 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,23 +67,6 @@
 			children = (
 				73BA4AFB1B66C33300EF8213 /* Info.plist */,
 				73BA4AFF1B66C33300EF8213 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		73BA4B0D1B66C33300EF8213 /* SystemExplorerTests */ = {
-			isa = PBXGroup;
-			children = (
-				73BA4B101B66C33300EF8213 /* SystemExplorerTests.m */,
-				73BA4B0E1B66C33300EF8213 /* Supporting Files */,
-			);
-			path = SystemExplorerTests;
-			sourceTree = "<group>";
-		};
-		73BA4B0E1B66C33300EF8213 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				73BA4B0F1B66C33300EF8213 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
