@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		73BA4AFE1B66C33300EF8213 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA4AFD1B66C33300EF8213 /* AppDelegate.m */; };
-		73BA4B001B66C33300EF8213 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA4AFF1B66C33300EF8213 /* main.m */; };
+		73BA4B001B66C33300EF8213 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BA4AFF1B66C33300EF8213 /* main.cpp */; };
 		73BA4B021B66C33300EF8213 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BA4B011B66C33300EF8213 /* Images.xcassets */; };
 		73BA4B051B66C33300EF8213 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BA4B031B66C33300EF8213 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		73BA4AFB1B66C33300EF8213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73BA4AFC1B66C33300EF8213 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73BA4AFD1B66C33300EF8213 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		73BA4AFF1B66C33300EF8213 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		73BA4AFF1B66C33300EF8213 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		73BA4B011B66C33300EF8213 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BA4B041B66C33300EF8213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				73BA4AFB1B66C33300EF8213 /* Info.plist */,
-				73BA4AFF1B66C33300EF8213 /* main.m */,
+				73BA4AFF1B66C33300EF8213 /* main.cpp */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BA4B001B66C33300EF8213 /* main.m in Sources */,
+				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
 				73BA4AFE1B66C33300EF8213 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
