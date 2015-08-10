@@ -14,8 +14,13 @@ class Shader
 public:
     GLuint program;
 
-    Shader(const GLchar* vertexSourceName, const GLchar* fragmentSourceName);
+    Shader(const GLchar* vertexShaderSourceFileName, const GLchar* fragmentShaderSourceFileName);
     void Use();
+
+private:
+    std::string ReadShaderSourceFile(std::string shaderSourceFileName);
+    GLuint CreateShaderFromSource(std::string shaderSourceCode, GLenum shaderType);
+    GLuint CreateProgram(GLuint vertexShader, GLuint fragmentShader);
 };
 
 #endif
