@@ -1,9 +1,38 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <stdio.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
+#include <math.h>
+#include <CoreFoundation/CoreFoundation.h>
+#include <CoreServices/CoreServices.h>
+#include <sys/param.h>
+#include <unistd.h>
+
+#include "shader.h"
+
+static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, GL_TRUE);
+    }
+}
 
 int main(int argc, const char * argv[]) {
+    char resourceDirectory[MAXPATHLEN];
+
+    if (!CFURLGetFileSystemRepresentation(CFBundleCopyResourcesDirectoryURL(CFBundleGetMainBundle()), 1, reinterpret_cast<UInt8*>(resourceDirectory), MAXPATHLEN)) {
+        std::cerr << "Could not get resource directory." << std::endl;
+
+        return 1;
+    }
+
+    if (chdir(resourceDirectory) != 0) {
+        std::cerr << "Could not cd into resource directory." << std::endl;
+
+        return 1;
+    }
+
     if (!glfwInit()) {
         return 1;
     }
@@ -17,10 +46,10 @@ int main(int argc, const char * argv[]) {
     const GLFWvidmode* largestVidmode = glfwGetVideoMode(largestMonitor);
 
     for (int i = 1; i < monitorCount; i += 1) {
-        const GLFWvidmode* mode = glfwGetVideoMode(monitors[i]);
+        const GLFWvidmode* vidmode = glfwGetVideoMode(monitors[i]);
 
-        if (mode->width * mode->height > largestVidmode->width * largestVidmode->height) {
-            largestVidmode = mode;
+        if (vidmode->width * vidmode->height > largestVidmode->width * largestVidmode->height) {
+            largestVidmode = vidmode;
 
             largestMonitor = monitors[i];
         }
@@ -50,92 +79,67 @@ int main(int argc, const char * argv[]) {
 
     glewInit();
 
-    const GLubyte* renderer = glGetString(GL_RENDERER);
+    const GLubyte* openGLRenderer = glGetString(GL_RENDERER);
 
-    const GLubyte* version = glGetString(GL_VERSION);
+    const GLubyte* openGLVersion = glGetString(GL_VERSION);
 
-    printf("Renderer: %s\n", renderer);
+    std::cout << "Renderer: " << openGLRenderer << std::endl;
 
-    printf("OpenGL version supported: %s\n", version);
+    std::cout << "OpenGL version supported: " << openGLVersion << std::endl;
 
-    glEnable (GL_DEPTH_TEST);
-    glDepthFunc (GL_LESS);
+    glEnable(GL_DEPTH_TEST);
+
+    glDepthFunc(GL_LESS);
 
     float points[] = {
-        0.0f,  0.5f,  0.0f,
-        0.5f, -0.5f,  0.0f,
-        -0.5f, -0.5f,  0.0f
+        0.0f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
+        0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
+        -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f
     };
 
-    GLuint vbo = 0;
+    GLuint triangleVBO = 0;
 
-    glGenBuffers(1, &vbo);
+    glGenBuffers(1, &triangleVBO);
 
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, triangleVBO);
 
-    glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(float), points, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
 
-    GLuint vao = 0;
+    GLuint triangleVAO = 0;
 
-    glGenVertexArrays(1, &vao);
+    glGenVertexArrays(1, &triangleVAO);
 
-    glBindVertexArray(vao);
+    glBindVertexArray(triangleVAO);
 
-    glEnableVertexAttribArray (0);
+    glBindBuffer(GL_ARRAY_BUFFER, triangleVBO);
 
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+    glEnableVertexAttribArray(0);
 
-    const char* vertex_shader =
-    "#version 400\n"
-    "in vec3 vp;"
-    "void main() {"
-    "  gl_Position = vec4 (vp, 1.0);"
-    "}";
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3* sizeof(GLfloat)));
 
-    const char* fragment_shader =
-    "#version 400\n"
-    "out vec4 frag_colour;"
-    "void main() {"
-    "  frag_colour = vec4(1.0, 1.0, 1.0, 1.0);"
-    "}";
+    glEnableVertexAttribArray(1);
 
-    GLuint vs = glCreateShader(GL_VERTEX_SHADER);
+    Shader triangle("triangle.vs", "triangle.frag");
 
-    glShaderSource(vs, 1, &vertex_shader, NULL);
-
-    glCompileShader(vs);
-
-    GLuint fs = glCreateShader(GL_FRAGMENT_SHADER);
-
-    glShaderSource(fs, 1, &fragment_shader, NULL);
-
-    glCompileShader(fs);
-
-    GLuint shader_program = glCreateProgram();
-
-    glAttachShader(shader_program, fs);
-
-    glAttachShader(shader_program, vs);
-
-    glLinkProgram(shader_program);
+    glfwSetKeyCallback(window, keyCallback);
 
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glUseProgram(shader_program);
+        triangle.Use();
 
-        glBindVertexArray(vao);
-
+        glBindVertexArray(triangleVAO);
+        
         glDrawArrays(GL_TRIANGLES, 0, 3);
-
+        
         glfwSwapBuffers(window);
-
+        
         glfwPollEvents();
     }
     
     glfwTerminate();
-
+    
     return 0;
 }

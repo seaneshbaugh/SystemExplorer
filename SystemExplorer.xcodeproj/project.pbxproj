@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		734A4EE01B74F25400C8518E /* triangle.vs in Resources */ = {isa = PBXBuildFile; fileRef = 734A4EDF1B74F25400C8518E /* triangle.vs */; };
+		734A4EE21B74F26700C8518E /* triangle.frag in Resources */ = {isa = PBXBuildFile; fileRef = 734A4EE11B74F26700C8518E /* triangle.frag */; };
+		734A4EE51B74F3B300C8518E /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 734A4EE41B74F3B300C8518E /* shader.cpp */; };
+		734A4EEB1B75061B00C8518E /* triangle.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734A4EDF1B74F25400C8518E /* triangle.vs */; };
+		734A4EEC1B75061D00C8518E /* triangle.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734A4EE11B74F26700C8518E /* triangle.frag */; };
+		734A4EEE1B75081600C8518E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734A4EED1B75081600C8518E /* Cocoa.framework */; };
 		73BA4B001B66C33300EF8213 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BA4AFF1B66C33300EF8213 /* main.cpp */; };
 		73BA4B1D1B66C73B00EF8213 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA4B1C1B66C73B00EF8213 /* OpenGL.framework */; };
 		73BA4B3C1B67F91400EF8213 /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */; };
@@ -16,6 +22,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		734A4EEA1B75061200C8518E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = shaders;
+			dstSubfolderSpec = 7;
+			files = (
+				734A4EEC1B75061D00C8518E /* triangle.frag in CopyFiles */,
+				734A4EEB1B75061B00C8518E /* triangle.vs in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73BA4B201B66CE0000EF8213 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -30,6 +47,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		734A4EDF1B74F25400C8518E /* triangle.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = triangle.vs; path = src/shaders/triangle.vs; sourceTree = "<group>"; };
+		734A4EE11B74F26700C8518E /* triangle.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = triangle.frag; path = src/shaders/triangle.frag; sourceTree = "<group>"; };
+		734A4EE31B74F31A00C8518E /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = shader.h; path = src/shader.h; sourceTree = "<group>"; };
+		734A4EE41B74F3B300C8518E /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shader.cpp; path = src/shader.cpp; sourceTree = "<group>"; };
+		734A4EED1B75081600C8518E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		73BA4AF71B66C33300EF8213 /* SystemExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BA4AFB1B66C33300EF8213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73BA4AFF1B66C33300EF8213 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
@@ -43,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734A4EEE1B75081600C8518E /* Cocoa.framework in Frameworks */,
 				73BA4B3E1B67F92700EF8213 /* libglfw3.3.1.dylib in Frameworks */,
 				73BA4B3C1B67F91400EF8213 /* libGLEW.1.12.0.dylib in Frameworks */,
 				73BA4B1D1B66C73B00EF8213 /* OpenGL.framework in Frameworks */,
@@ -52,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		734A4EDE1B74F22100C8518E /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				734A4EDF1B74F25400C8518E /* triangle.vs */,
+				734A4EE11B74F26700C8518E /* triangle.frag */,
+			);
+			name = shaders;
+			sourceTree = "<group>";
+		};
 		73BA4AEE1B66C33300EF8213 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +121,7 @@
 		73BA4B1E1B66C75000EF8213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				734A4EED1B75081600C8518E /* Cocoa.framework */,
 				73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */,
 				73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */,
 				73BA4B1C1B66C73B00EF8213 /* OpenGL.framework */,
@@ -100,7 +133,10 @@
 		73BA4B231B66D06D00EF8213 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				734A4EDE1B74F22100C8518E /* shaders */,
 				73BA4AFF1B66C33300EF8213 /* main.cpp */,
+				734A4EE31B74F31A00C8518E /* shader.h */,
+				734A4EE41B74F3B300C8518E /* shader.cpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -116,7 +152,8 @@
 				73BA4AF41B66C33300EF8213 /* Frameworks */,
 				73BA4AF51B66C33300EF8213 /* Resources */,
 				73BA4B201B66CE0000EF8213 /* CopyFiles */,
-				73BA4B2B1B67C3FE00EF8213 /* ShellScript */,
+				734A4EE91B74F5A300C8518E /* ShellScript */,
+				734A4EEA1B75061200C8518E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -164,13 +201,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734A4EE01B74F25400C8518E /* triangle.vs in Resources */,
+				734A4EE21B74F26700C8518E /* triangle.frag in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73BA4B2B1B67C3FE00EF8213 /* ShellScript */ = {
+		734A4EE91B74F5A300C8518E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -181,7 +220,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "install_name_tool -id @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libglfw3.3.1.dylib\"\ninstall_name_tool -id @executable_path/../Frameworks/libGLEW.1.12.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libGLEW.1.12.0.dylib\"\ninstall_name_tool -change /usr/local/lib/libglfw3.3.dylib @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libGLEW.1.12.0.dylib @executable_path/../Frameworks/libGLEW.1.12.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"";
+			shellScript = "install_name_tool -id @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libglfw3.3.1.dylib\"\ninstall_name_tool -id @executable_path/../Frameworks/libGLEW.1.12.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libGLEW.1.12.0.dylib\"\ninstall_name_tool -change /usr/local/lib/libglfw3.3.dylib @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libGLEW.1.12.0.dylib @executable_path/../Frameworks/libGLEW.1.12.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libglfw3.3.1.dylib\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libGLEW.1.12.0.dylib\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -190,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734A4EE51B74F3B300C8518E /* shader.cpp in Sources */,
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +336,7 @@
 					"$(PROJECT_DIR)/SystemExplorer.xcodeproj",
 					"$(PROJECT_DIR)/lib",
 				);
+				OTHER_LDFLAGS = "-headerpad_max_install_names";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -320,6 +361,7 @@
 					"$(PROJECT_DIR)/SystemExplorer.xcodeproj",
 					"$(PROJECT_DIR)/lib",
 				);
+				OTHER_LDFLAGS = "-headerpad_max_install_names";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
