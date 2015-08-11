@@ -130,6 +130,12 @@ int main(int argc, const char * argv[]) {
 
         triangle.Use();
 
+        GLfloat time = glfwGetTime();
+
+        GLint timeLocation = glGetUniformLocation(triangle.program, "time");
+
+        glUniform1f(timeLocation, time);
+
         glBindVertexArray(triangleVAO);
         
         glDrawArrays(GL_TRIANGLES, 0, 3);
