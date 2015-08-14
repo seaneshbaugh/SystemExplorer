@@ -25,6 +25,7 @@
 		73F7B20B1B7A36D300A42C29 /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B2011B7A36D300A42C29 /* stb_image_aug.c */; };
 		73F7B2101B7B067E00A42C29 /* ruby.png in Resources */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
 		73F7B2111B7B068500A42C29 /* ruby.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
+		73F7B3891B7E727300A42C29 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B3871B7E727300A42C29 /* texture.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +86,8 @@
 		73F7B2031B7A36D300A42C29 /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
 		73F7B2041B7A36D300A42C29 /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
 		73F7B20F1B7B067E00A42C29 /* ruby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ruby.png; path = textures/ruby.png; sourceTree = "<group>"; };
+		73F7B3871B7E727300A42C29 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture.cpp; path = src/texture.cpp; sourceTree = "<group>"; };
+		73F7B3881B7E727300A42C29 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture.h; path = src/texture.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +167,10 @@
 			children = (
 				734A4EDE1B74F22100C8518E /* shaders */,
 				73BA4AFF1B66C33300EF8213 /* main.cpp */,
-				734A4EE31B74F31A00C8518E /* shader.h */,
 				734A4EE41B74F3B300C8518E /* shader.cpp */,
+				734A4EE31B74F31A00C8518E /* shader.h */,
+				73F7B3871B7E727300A42C29 /* texture.cpp */,
+				73F7B3881B7E727300A42C29 /* texture.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				73F7B2071B7A36D300A42C29 /* image_helper.c in Sources */,
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
 				73F7B20A1B7A36D300A42C29 /* SOIL.c in Sources */,
+				73F7B3891B7E727300A42C29 /* texture.cpp in Sources */,
 				73F7B2061B7A36D300A42C29 /* image_DXT.c in Sources */,
 				73F7B20B1B7A36D300A42C29 /* stb_image_aug.c in Sources */,
 			);

@@ -7,7 +7,9 @@
 #include <math.h>
 
 #include "../lib/soil/soil.h"
+
 #include "shader.h"
+#include "texture.h"
 
 static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
@@ -102,31 +104,7 @@ int main(int argc, const char * argv[]) {
 
     glBindVertexArray(0);
 
-    GLuint texture;
-
-    glGenTextures(1, &texture);
-
-    glBindTexture(GL_TEXTURE_2D, texture);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    int width, height;
-
-    unsigned char* image = SOIL_load_image("textures/ruby.png", &width, &height, 0, SOIL_LOAD_RGB);
-
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-
-    glGenerateMipmap(GL_TEXTURE_2D);
-
-    SOIL_free_image_data(image);
-
-    glBindTexture(GL_TEXTURE_2D, 0);
+    Texture ruby = Texture("textures/ruby.png");
 
     Shader triangle("triangle.vs", "triangle.frag");
 
@@ -135,7 +113,7 @@ int main(int argc, const char * argv[]) {
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glBindTexture(GL_TEXTURE_2D, texture);
+        ruby.Use();
 
         triangle.Use();
 
