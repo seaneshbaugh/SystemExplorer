@@ -57,10 +57,10 @@ int main(int argc, const char * argv[]) {
     glDepthFunc(GL_LESS);
 
     float points[] = {
-        0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-        0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-        -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-        -0.5f, 0.5f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f
+         0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  1.0f, 1.0f,
+         0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  1.0f, 0.0f,
+        -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,  0.0f, 0.0f,
+        -0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  0.0f, 1.0f
     };
 
     GLuint indices[] = {
@@ -110,10 +110,20 @@ int main(int argc, const char * argv[]) {
 
     glfwSetKeyCallback(window, keyCallback);
 
+    int width, height;
+
+    glfwGetWindowSize(window, &width, &height);
+
+    GLfloat aspectRatio = static_cast<GLfloat>(width) / static_cast<GLfloat>(height);
+
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        glActiveTexture(GL_TEXTURE0);
+
         ruby.Use();
+
+        glUniform1i(glGetUniformLocation(triangle.program, "ourTexture"), 0);
 
         triangle.Use();
 
@@ -122,6 +132,23 @@ int main(int argc, const char * argv[]) {
         GLint timeLocation = glGetUniformLocation(triangle.program, "time");
 
         glUniform1f(timeLocation, time);
+
+        glm::mat4 modelMatrix;
+        glm::mat4 viewMatrix;
+        glm::mat4 projectionMatrix;
+
+        modelMatrix = glm::rotate(modelMatrix, 0.0f, glm::vec3(1.0f, 0.0f, 0.0f));
+
+        viewMatrix = glm::translate(viewMatrix, glm::vec3(0.0f, 0.0f, -3.0f));
+
+        projectionMatrix = glm::perspective(45.0f, aspectRatio, 0.1f, 100.f);
+
+        glUniformMatrix4fv(glGetUniformLocation(triangle.program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
+
+        glUniformMatrix4fv(glGetUniformLocation(triangle.program, "view"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+
+        glUniformMatrix4fv(glGetUniformLocation(triangle.program, "projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
+
 
         glBindVertexArray(squareVAO);
 
