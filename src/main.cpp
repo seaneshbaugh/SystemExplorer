@@ -164,7 +164,7 @@ int main(int argc, const char * argv[]) {
 
     glDeleteBuffers(1, &squareVBO);
 
-    glDeleteBuffers(1, &squareEBO);;
+    glDeleteBuffers(1, &squareEBO);
     
     glfwTerminate();
     
@@ -175,6 +175,10 @@ GLFWwindow* CreateWindow() {
     int monitorCount;
 
     GLFWmonitor** monitors = glfwGetMonitors(&monitorCount);
+
+    if (monitorCount < 1) {
+        return nullptr;
+    }
 
     GLFWmonitor* largestMonitor = monitors[0];
 
