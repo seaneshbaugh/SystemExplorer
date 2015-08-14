@@ -19,6 +19,12 @@
 		73BA4B3E1B67F92700EF8213 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */; };
 		73BA4B3F1B67F93000EF8213 /* libglfw3.3.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		73BA4B401B67F93300EF8213 /* libGLEW.1.12.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		73F7B2061B7A36D300A42C29 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B1F81B7A36D300A42C29 /* image_DXT.c */; };
+		73F7B2071B7A36D300A42C29 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B1FA1B7A36D300A42C29 /* image_helper.c */; };
+		73F7B20A1B7A36D300A42C29 /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B1FF1B7A36D300A42C29 /* SOIL.c */; };
+		73F7B20B1B7A36D300A42C29 /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B2011B7A36D300A42C29 /* stb_image_aug.c */; };
+		73F7B2101B7B067E00A42C29 /* ruby.png in Resources */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
+		73F7B2111B7B068500A42C29 /* ruby.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +50,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73F7B20E1B7B066300A42C29 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = textures;
+			dstSubfolderSpec = 7;
+			files = (
+				73F7B2111B7B068500A42C29 /* ruby.png in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +74,17 @@
 		73BA4B1C1B66C73B00EF8213 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.12.0.dylib; path = ../../../../../usr/local/Cellar/glew/1.12.0/lib/libGLEW.1.12.0.dylib; sourceTree = "<group>"; };
 		73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = ../../../../../usr/local/Cellar/glfw3/3.1.1/lib/libglfw3.3.1.dylib; sourceTree = "<group>"; };
+		73F7B1F81B7A36D300A42C29 /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
+		73F7B1F91B7A36D300A42C29 /* image_DXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_DXT.h; sourceTree = "<group>"; };
+		73F7B1FA1B7A36D300A42C29 /* image_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
+		73F7B1FB1B7A36D300A42C29 /* image_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_helper.h; sourceTree = "<group>"; };
+		73F7B1FF1B7A36D300A42C29 /* SOIL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SOIL.c; sourceTree = "<group>"; };
+		73F7B2001B7A36D300A42C29 /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
+		73F7B2011B7A36D300A42C29 /* stb_image_aug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image_aug.c; sourceTree = "<group>"; };
+		73F7B2021B7A36D300A42C29 /* stb_image_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_aug.h; sourceTree = "<group>"; };
+		73F7B2031B7A36D300A42C29 /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
+		73F7B2041B7A36D300A42C29 /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
+		73F7B20F1B7B067E00A42C29 /* ruby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ruby.png; path = textures/ruby.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				73BA4B231B66D06D00EF8213 /* src */,
+				73F7B1F61B7A36A800A42C29 /* lib */,
+				73F7B20D1B7A377C00A42C29 /* textures */,
 				73BA4AF91B66C33300EF8213 /* SystemExplorer */,
 				73BA4AF81B66C33300EF8213 /* Products */,
 				73BA4B1E1B66C75000EF8213 /* Frameworks */,
@@ -141,6 +170,40 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		73F7B1F61B7A36A800A42C29 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				73F7B1F71B7A36D300A42C29 /* soil */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		73F7B1F71B7A36D300A42C29 /* soil */ = {
+			isa = PBXGroup;
+			children = (
+				73F7B1F81B7A36D300A42C29 /* image_DXT.c */,
+				73F7B1F91B7A36D300A42C29 /* image_DXT.h */,
+				73F7B1FA1B7A36D300A42C29 /* image_helper.c */,
+				73F7B1FB1B7A36D300A42C29 /* image_helper.h */,
+				73F7B1FF1B7A36D300A42C29 /* SOIL.c */,
+				73F7B2001B7A36D300A42C29 /* SOIL.h */,
+				73F7B2011B7A36D300A42C29 /* stb_image_aug.c */,
+				73F7B2021B7A36D300A42C29 /* stb_image_aug.h */,
+				73F7B2031B7A36D300A42C29 /* stbi_DDS_aug.h */,
+				73F7B2041B7A36D300A42C29 /* stbi_DDS_aug_c.h */,
+			);
+			name = soil;
+			path = lib/soil;
+			sourceTree = "<group>";
+		};
+		73F7B20D1B7A377C00A42C29 /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				73F7B20F1B7B067E00A42C29 /* ruby.png */,
+			);
+			name = textures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +217,7 @@
 				73BA4B201B66CE0000EF8213 /* CopyFiles */,
 				734A4EE91B74F5A300C8518E /* ShellScript */,
 				734A4EEA1B75061200C8518E /* CopyFiles */,
+				73F7B20E1B7B066300A42C29 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -203,6 +267,7 @@
 			files = (
 				734A4EE01B74F25400C8518E /* triangle.vs in Resources */,
 				734A4EE21B74F26700C8518E /* triangle.frag in Resources */,
+				73F7B2101B7B067E00A42C29 /* ruby.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				734A4EE51B74F3B300C8518E /* shader.cpp in Sources */,
+				73F7B2071B7A36D300A42C29 /* image_helper.c in Sources */,
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
+				73F7B20A1B7A36D300A42C29 /* SOIL.c in Sources */,
+				73F7B2061B7A36D300A42C29 /* image_DXT.c in Sources */,
+				73F7B20B1B7A36D300A42C29 /* stb_image_aug.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
