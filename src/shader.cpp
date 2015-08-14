@@ -63,16 +63,28 @@ GLuint Shader::CreateShaderFromSource(std::string shaderSourceCode, GLenum shade
         switch(shaderType) {
 //            case GL_COMPUTE_SHADER:
 //                shaderTypeString = "compute";
+//
+//                break;
             case GL_VERTEX_SHADER:
                 shaderTypeString = "vertex";
+
+                break;
 //            case GL_TESS_CONTROL_SHADER:
 //                shaderTypeString = "tess control";
+//
+//                break;
 //            case GL_TESS_EVALUATION_SHADER:
 //                shaderTypeString = "tess evaluation";
+//
+//                break;
 //            case GL_GEOMETRY_SHADER:
 //                shaderTypeString = "geometry";
+//
+//                break;
             case GL_FRAGMENT_SHADER:
                 shaderTypeString = "fragment";
+
+                break;
             default:
                 shaderTypeString = "unknown";
         }
