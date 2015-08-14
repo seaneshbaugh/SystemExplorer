@@ -5,10 +5,6 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <math.h>
-#include <CoreFoundation/CoreFoundation.h>
-#include <CoreServices/CoreServices.h>
-#include <sys/param.h>
-#include <unistd.h>
 
 #include "../lib/soil/soil.h"
 #include "shader.h"
