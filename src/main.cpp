@@ -10,6 +10,7 @@
 
 #include "shader.h"
 #include "texture.h"
+#include "cube.h"
 
 static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
@@ -56,55 +57,7 @@ int main(int argc, const char * argv[]) {
 
     glDepthFunc(GL_LESS);
 
-    float points[] = {
-         0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  1.0f, 1.0f,
-         0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  1.0f, 0.0f,
-        -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,  0.0f, 0.0f,
-        -0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  0.0f, 1.0f
-    };
-
-    GLuint indices[] = {
-        0, 1, 3,
-        1, 2, 3
-    };
-
-    GLuint squareVBO = 0;
-
-    glGenBuffers(1, &squareVBO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, squareVBO);
-
-    glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
-
-    GLuint squareVAO = 0;
-
-    glGenVertexArrays(1, &squareVAO);
-
-    glBindVertexArray(squareVAO);
-
-    GLuint squareEBO = 0;
-
-    glGenBuffers(1, &squareEBO);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, squareEBO);
-
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
-
-    glEnableVertexAttribArray(0);
-
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(3* sizeof(GLfloat)));
-
-    glEnableVertexAttribArray(1);
-
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
-
-    glEnableVertexAttribArray(2);
-
-    glBindVertexArray(0);
-
-    Texture ruby = Texture("textures/ruby.png");
+    Texture checkerboard = Texture("textures/checkerboard.png");
 
     Shader triangle("triangle.vs", "triangle.frag");
 
@@ -116,12 +69,25 @@ int main(int argc, const char * argv[]) {
 
     GLfloat aspectRatio = static_cast<GLfloat>(width) / static_cast<GLfloat>(height);
 
+    Cube cube = Cube();
+
+    glm::vec3 cubePositions[] = {
+        glm::vec3( 0.0f,  0.0f,  0.0f),
+        glm::vec3( 2.0f,  5.0f, -15.0f),
+        glm::vec3(-1.5f, -2.2f, -2.5f),
+        glm::vec3(-3.8f, -2.0f, -12.3f),
+        glm::vec3( 2.4f, -0.4f, -3.5f),
+        glm::vec3(-1.7f,  3.0f, -7.5f),
+        glm::vec3( 1.3f, -2.0f, -2.5f),
+        glm::vec3( 1.5f,  2.0f, -2.5f),
+        glm::vec3( 1.5f,  0.2f, -1.5f),
+        glm::vec3(-1.3f,  1.0f, -1.5f)
+    };
+
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glActiveTexture(GL_TEXTURE0);
-
-        ruby.Use();
+        checkerboard.Use();
 
         glUniform1i(glGetUniformLocation(triangle.program, "ourTexture"), 0);
 
@@ -133,26 +99,33 @@ int main(int argc, const char * argv[]) {
 
         glUniform1f(timeLocation, time);
 
-        glm::mat4 modelMatrix;
         glm::mat4 viewMatrix;
-        glm::mat4 projectionMatrix;
 
-        modelMatrix = glm::rotate(modelMatrix, 0.0f, glm::vec3(1.0f, 0.0f, 0.0f));
+        glm::mat4 projectionMatrix;
 
         viewMatrix = glm::translate(viewMatrix, glm::vec3(0.0f, 0.0f, -3.0f));
 
         projectionMatrix = glm::perspective(45.0f, aspectRatio, 0.1f, 100.f);
 
-        glUniformMatrix4fv(glGetUniformLocation(triangle.program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-
         glUniformMatrix4fv(glGetUniformLocation(triangle.program, "view"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
 
         glUniformMatrix4fv(glGetUniformLocation(triangle.program, "projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
 
+        cube.Use();
 
-        glBindVertexArray(squareVAO);
+        for (GLuint i = 0; i < 10; i += 1) {
+            glm::mat4 modelMatrix;
 
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+            modelMatrix = glm::translate(modelMatrix, cubePositions[i]);
+
+            GLfloat angle = 20.0f * (i * 5 + 1) * time / 360.0f;
+
+            modelMatrix = glm::rotate(modelMatrix, angle, glm::vec3(1.0f, 0.3f, 0.5f));
+
+            glUniformMatrix4fv(glGetUniformLocation(triangle.program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
+
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
 
         glBindVertexArray(0);
 
@@ -161,12 +134,6 @@ int main(int argc, const char * argv[]) {
         glfwPollEvents();
     }
 
-    glDeleteVertexArrays(1, &squareVAO);
-
-    glDeleteBuffers(1, &squareVBO);
-
-    glDeleteBuffers(1, &squareEBO);
-    
     glfwTerminate();
     
     return 0;

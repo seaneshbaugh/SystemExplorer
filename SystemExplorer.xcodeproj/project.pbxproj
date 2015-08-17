@@ -26,6 +26,9 @@
 		73F7B2101B7B067E00A42C29 /* ruby.png in Resources */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
 		73F7B2111B7B068500A42C29 /* ruby.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
 		73F7B3891B7E727300A42C29 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B3871B7E727300A42C29 /* texture.cpp */; };
+		73F7B38F1B804B6300A42C29 /* cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B38D1B804B6300A42C29 /* cube.cpp */; };
+		73F7B3911B81413E00A42C29 /* checkerboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 73F7B3901B81413E00A42C29 /* checkerboard.png */; };
+		73F7B3921B81414D00A42C29 /* checkerboard.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73F7B3901B81413E00A42C29 /* checkerboard.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +60,7 @@
 			dstPath = textures;
 			dstSubfolderSpec = 7;
 			files = (
+				73F7B3921B81414D00A42C29 /* checkerboard.png in CopyFiles */,
 				73F7B2111B7B068500A42C29 /* ruby.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +92,9 @@
 		73F7B20F1B7B067E00A42C29 /* ruby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ruby.png; path = textures/ruby.png; sourceTree = "<group>"; };
 		73F7B3871B7E727300A42C29 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture.cpp; path = src/texture.cpp; sourceTree = "<group>"; };
 		73F7B3881B7E727300A42C29 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture.h; path = src/texture.h; sourceTree = "<group>"; };
+		73F7B38D1B804B6300A42C29 /* cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cube.cpp; path = src/cube.cpp; sourceTree = "<group>"; };
+		73F7B38E1B804B6300A42C29 /* cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cube.h; path = src/cube.h; sourceTree = "<group>"; };
+		73F7B3901B81413E00A42C29 /* checkerboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkerboard.png; path = textures/checkerboard.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +178,8 @@
 				734A4EE31B74F31A00C8518E /* shader.h */,
 				73F7B3871B7E727300A42C29 /* texture.cpp */,
 				73F7B3881B7E727300A42C29 /* texture.h */,
+				73F7B38D1B804B6300A42C29 /* cube.cpp */,
+				73F7B38E1B804B6300A42C29 /* cube.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 		73F7B20D1B7A377C00A42C29 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				73F7B3901B81413E00A42C29 /* checkerboard.png */,
 				73F7B20F1B7B067E00A42C29 /* ruby.png */,
 			);
 			name = textures;
@@ -270,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F7B3911B81413E00A42C29 /* checkerboard.png in Resources */,
 				734A4EE01B74F25400C8518E /* triangle.vs in Resources */,
 				734A4EE21B74F26700C8518E /* triangle.frag in Resources */,
 				73F7B2101B7B067E00A42C29 /* ruby.png in Resources */,
@@ -299,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F7B38F1B804B6300A42C29 /* cube.cpp in Sources */,
 				734A4EE51B74F3B300C8518E /* shader.cpp in Sources */,
 				73F7B2071B7A36D300A42C29 /* image_helper.c in Sources */,
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
