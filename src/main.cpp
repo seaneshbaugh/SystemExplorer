@@ -4,6 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
+#include <random>
 #include <math.h>
 
 #include "../lib/soil/soil.h"
@@ -71,7 +72,19 @@ int main(int argc, const char * argv[]) {
 
     Cube cube = Cube();
 
-    glm::vec3 cubePositions[] = {
+    std::random_device rd;
+
+    std::mt19937 mt(rd());
+
+    std::uniform_int_distribution<float> dist(-100.0f, 100.0f);
+
+    glm::vec3 cubePositions[1000];
+
+    for (size_t i = 0; i < 1000; i += 1) {
+        cubePositions[i] = glm::vec3(dist(mt), dist(mt), dist(mt));
+    }
+
+    /*glm::vec3 cubePositions[] = {
         glm::vec3( 0.0f,  0.0f,  0.0f),
         glm::vec3( 2.0f,  5.0f, -15.0f),
         glm::vec3(-1.5f, -2.2f, -2.5f),
@@ -82,7 +95,7 @@ int main(int argc, const char * argv[]) {
         glm::vec3( 1.5f,  2.0f, -2.5f),
         glm::vec3( 1.5f,  0.2f, -1.5f),
         glm::vec3(-1.3f,  1.0f, -1.5f)
-    };
+    };*/
 
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -103,9 +116,11 @@ int main(int argc, const char * argv[]) {
 
         glm::mat4 projectionMatrix;
 
-        viewMatrix = glm::translate(viewMatrix, glm::vec3(0.0f, 0.0f, -3.0f));
+        viewMatrix = glm::translate(viewMatrix, glm::vec3(0.0f, 0.0f, -13.0f));
 
-        projectionMatrix = glm::perspective(45.0f, aspectRatio, 0.1f, 100.f);
+        viewMatrix = glm::rotate(viewMatrix, static_cast<float>(fmod(time, 360.0f)), glm::vec3(0.0f, 1.0f, 0.0f));
+
+        projectionMatrix = glm::perspective(45.0f, aspectRatio, 0.1f, 200.f);
 
         glUniformMatrix4fv(glGetUniformLocation(triangle.program, "view"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
 
@@ -113,12 +128,12 @@ int main(int argc, const char * argv[]) {
 
         cube.Use();
 
-        for (GLuint i = 0; i < 10; i += 1) {
+        for (GLuint i = 0; i < 1000; i += 1) {
             glm::mat4 modelMatrix;
 
             modelMatrix = glm::translate(modelMatrix, cubePositions[i]);
 
-            GLfloat angle = 20.0f * (i * 5 + 1) * time / 360.0f;
+            GLfloat angle = 20.0f * (((i * 5) % 10) + 1) * time / 360.0f;
 
             modelMatrix = glm::rotate(modelMatrix, angle, glm::vec3(1.0f, 0.3f, 0.5f));
 
