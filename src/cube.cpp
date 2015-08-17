@@ -65,6 +65,7 @@ Cube::Cube() {
 
     glEnableVertexAttribArray(1);
 
+    // Texture coordinates attribute
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
 
     glEnableVertexAttribArray(2);

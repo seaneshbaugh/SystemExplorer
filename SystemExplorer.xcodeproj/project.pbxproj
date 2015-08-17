@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7300AA8A1B82432100FCCEE3 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7300AA881B82432100FCCEE3 /* camera.cpp */; };
 		734A4EE01B74F25400C8518E /* triangle.vs in Resources */ = {isa = PBXBuildFile; fileRef = 734A4EDF1B74F25400C8518E /* triangle.vs */; };
 		734A4EE21B74F26700C8518E /* triangle.frag in Resources */ = {isa = PBXBuildFile; fileRef = 734A4EE11B74F26700C8518E /* triangle.frag */; };
 		734A4EE51B74F3B300C8518E /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 734A4EE41B74F3B300C8518E /* shader.cpp */; };
@@ -68,6 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7300AA881B82432100FCCEE3 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = camera.cpp; path = src/camera.cpp; sourceTree = "<group>"; };
+		7300AA891B82432100FCCEE3 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = camera.h; path = src/camera.h; sourceTree = "<group>"; };
 		734A4EDF1B74F25400C8518E /* triangle.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = triangle.vs; path = src/shaders/triangle.vs; sourceTree = "<group>"; };
 		734A4EE11B74F26700C8518E /* triangle.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = triangle.frag; path = src/shaders/triangle.frag; sourceTree = "<group>"; };
 		734A4EE31B74F31A00C8518E /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = shader.h; path = src/shader.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				73F7B3881B7E727300A42C29 /* texture.h */,
 				73F7B38D1B804B6300A42C29 /* cube.cpp */,
 				73F7B38E1B804B6300A42C29 /* cube.h */,
+				7300AA881B82432100FCCEE3 /* camera.cpp */,
+				7300AA891B82432100FCCEE3 /* camera.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				734A4EE51B74F3B300C8518E /* shader.cpp in Sources */,
 				73F7B2071B7A36D300A42C29 /* image_helper.c in Sources */,
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
+				7300AA8A1B82432100FCCEE3 /* camera.cpp in Sources */,
 				73F7B20A1B7A36D300A42C29 /* SOIL.c in Sources */,
 				73F7B3891B7E727300A42C29 /* texture.cpp in Sources */,
 				73F7B2061B7A36D300A42C29 /* image_DXT.c in Sources */,

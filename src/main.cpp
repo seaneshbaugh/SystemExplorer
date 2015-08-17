@@ -9,17 +9,29 @@
 
 #include "../lib/soil/soil.h"
 
+#include "camera.h"
 #include "shader.h"
 #include "texture.h"
 #include "cube.h"
 
-static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-        glfwSetWindowShouldClose(window, GL_TRUE);
-    }
-}
+// OMG global variables, yuck.
+GLfloat lastX;
+GLfloat lastY;
+
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+
+bool keys[1024];
+
+GLfloat deltaTime = 0.0f;
+GLfloat lastFrame = 0.0f;
+
+bool allowInput = true;
+
+static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+static void mouseCallback(GLFWwindow* window, double xpos, double ypos);
 
 GLFWwindow* CreateWindow();
+void Move();
 
 int main(int argc, const char * argv[]) {
     glfwSetErrorCallback([] (int error, const char* description) {
@@ -44,6 +56,8 @@ int main(int argc, const char * argv[]) {
 
     glewExperimental = GL_TRUE;
 
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
     glewInit();
 
     const GLubyte* openGLRenderer = glGetString(GL_RENDERER);
@@ -64,11 +78,17 @@ int main(int argc, const char * argv[]) {
 
     glfwSetKeyCallback(window, keyCallback);
 
+    glfwSetCursorPosCallback(window, mouseCallback);
+
     int width, height;
 
     glfwGetWindowSize(window, &width, &height);
 
     GLfloat aspectRatio = static_cast<GLfloat>(width) / static_cast<GLfloat>(height);
+
+    lastX = static_cast<GLfloat>(width) / 2.0;
+
+    lastY = static_cast<GLfloat>(height) / 2.0;
 
     Cube cube = Cube();
 
@@ -76,29 +96,30 @@ int main(int argc, const char * argv[]) {
 
     std::mt19937 mt(rd());
 
-    std::uniform_int_distribution<float> dist(-100.0f, 100.0f);
+    std::uniform_int_distribution<float> dist(-150.0f, 150.0f);
 
-    glm::vec3 cubePositions[1000];
+    glm::vec3 cubePositions[5000];
 
-    for (size_t i = 0; i < 1000; i += 1) {
+    for (size_t i = 0; i < 5000; i += 1) {
         cubePositions[i] = glm::vec3(dist(mt), dist(mt), dist(mt));
     }
 
-    /*glm::vec3 cubePositions[] = {
-        glm::vec3( 0.0f,  0.0f,  0.0f),
-        glm::vec3( 2.0f,  5.0f, -15.0f),
-        glm::vec3(-1.5f, -2.2f, -2.5f),
-        glm::vec3(-3.8f, -2.0f, -12.3f),
-        glm::vec3( 2.4f, -0.4f, -3.5f),
-        glm::vec3(-1.7f,  3.0f, -7.5f),
-        glm::vec3( 1.3f, -2.0f, -2.5f),
-        glm::vec3( 1.5f,  2.0f, -2.5f),
-        glm::vec3( 1.5f,  0.2f, -1.5f),
-        glm::vec3(-1.3f,  1.0f, -1.5f)
-    };*/
+    for (size_t i = 0; i < 1024; i += 1) {
+        keys[i] = false;
+    }
 
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        glfwPollEvents();
+
+        GLfloat currentFrame = glfwGetTime();
+
+        deltaTime = currentFrame - lastFrame;
+
+        lastFrame = currentFrame;
+
+        Move();
 
         checkerboard.Use();
 
@@ -116,11 +137,16 @@ int main(int argc, const char * argv[]) {
 
         glm::mat4 projectionMatrix;
 
-        viewMatrix = glm::translate(viewMatrix, glm::vec3(0.0f, 0.0f, -13.0f));
 
-        viewMatrix = glm::rotate(viewMatrix, static_cast<float>(fmod(time, 360.0f)), glm::vec3(0.0f, 1.0f, 0.0f));
+        if (allowInput) {
+            viewMatrix = camera.GetViewMatrix();
+        } else {
+            camera.ProcessMouseMovement(5.0f, 0.0f);
 
-        projectionMatrix = glm::perspective(45.0f, aspectRatio, 0.1f, 200.f);
+            viewMatrix = camera.GetViewMatrix();
+        }
+
+        projectionMatrix = glm::perspective(45.0f, aspectRatio, 0.1f, 400.f);
 
         glUniformMatrix4fv(glGetUniformLocation(triangle.program, "view"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
 
@@ -128,7 +154,7 @@ int main(int argc, const char * argv[]) {
 
         cube.Use();
 
-        for (GLuint i = 0; i < 1000; i += 1) {
+        for (GLuint i = 0; i < 5000; i += 1) {
             glm::mat4 modelMatrix;
 
             modelMatrix = glm::translate(modelMatrix, cubePositions[i]);
@@ -145,13 +171,53 @@ int main(int argc, const char * argv[]) {
         glBindVertexArray(0);
 
         glfwSwapBuffers(window);
-        
-        glfwPollEvents();
     }
 
     glfwTerminate();
     
     return 0;
+}
+
+static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, GL_TRUE);
+    }
+
+    if (key == GLFW_KEY_P && action == GLFW_PRESS) {
+        allowInput = !allowInput;
+    }
+
+    if (action == GLFW_PRESS) {
+        keys[key] = true;
+    } else {
+        if (action == GLFW_RELEASE) {
+            keys[key] = false;
+        }
+    }
+}
+
+static void mouseCallback(GLFWwindow* window, double xpos, double ypos) {
+    static bool firstMouse = true;
+
+    if (allowInput) {
+        if (firstMouse) {
+            lastX = xpos;
+
+            lastY = ypos;
+
+            firstMouse = false;
+        }
+
+        GLfloat xOffset = xpos - lastX;
+
+        GLfloat yOffset = lastY - ypos;
+
+        lastX = xpos;
+
+        lastY = ypos;
+
+        camera.ProcessMouseMovement(xOffset, yOffset);
+    }
 }
 
 GLFWwindow* CreateWindow() {
@@ -188,4 +254,24 @@ GLFWwindow* CreateWindow() {
     GLFWwindow* window = glfwCreateWindow(largestVidmode->width, largestVidmode->height, "System Explorer", largestMonitor, nullptr);
 
     return window;
+}
+
+void Move() {
+    if (allowInput) {
+        if (keys[GLFW_KEY_W]) {
+            camera.ProcessKeyboardInput(FORWARD, deltaTime);
+        }
+
+        if (keys[GLFW_KEY_S]) {
+            camera.ProcessKeyboardInput(BACKWARD, deltaTime);
+        }
+
+        if (keys[GLFW_KEY_A]) {
+            camera.ProcessKeyboardInput(LEFT, deltaTime);
+        }
+
+        if (keys[GLFW_KEY_D]) {
+            camera.ProcessKeyboardInput(RIGHT, deltaTime);
+        }
+    }
 }
