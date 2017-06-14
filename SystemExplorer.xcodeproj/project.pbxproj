@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7300AA951B828DF000FCCEE3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7300AA941B828DF000FCCEE3 /* README.md */; };
 		7300AA9A1B8292DB00FCCEE3 /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7300AA991B8292DB00FCCEE3 /* libpng16.16.dylib */; };
 		7300AA9E1B82954400FCCEE3 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7300AA9D1B82954400FCCEE3 /* arial.ttf */; };
 		7300AAA01B82956800FCCEE3 /* arial.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7300AA9D1B82954400FCCEE3 /* arial.ttf */; };
@@ -275,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
-				7300AA951B828DF000FCCEE3 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -356,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
