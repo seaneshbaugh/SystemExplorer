@@ -24,6 +24,7 @@
 		A00048211D38CBDC00F5C5A1 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A000481D1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib */; };
 		A00048221D38CC0000F5C5A1 /* libGLEW.1.13.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A00048191D38C99F00F5C5A1 /* libGLEW.1.13.0.dylib */; };
 		A00048231D38CC1800F5C5A1 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A000481F1D38CAB500F5C5A1 /* libfreetype.6.dylib */; };
+		A0A7B2F31EF1AC1C00E59FA5 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0A7B2F11EF1AC1C00E59FA5 /* engine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +88,8 @@
 		A000481B1D38C9E100F5C5A1 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = /usr/local/Cellar/libpng/1.6.21/lib/libpng16.16.dylib; sourceTree = "<absolute>"; };
 		A000481D1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = /usr/local/Cellar/glfw3/3.1.2/lib/libglfw3.3.1.dylib; sourceTree = "<absolute>"; };
 		A000481F1D38CAB500F5C5A1 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = /usr/local/Cellar/freetype/2.6.3/lib/libfreetype.6.dylib; sourceTree = "<absolute>"; };
+		A0A7B2F11EF1AC1C00E59FA5 /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = engine.cpp; path = src/engine.cpp; sourceTree = "<group>"; };
+		A0A7B2F21EF1AC1C00E59FA5 /* engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = engine.hpp; path = src/engine.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				73BA4AFF1B66C33300EF8213 /* main.cpp */,
+				A0A7B2F11EF1AC1C00E59FA5 /* engine.cpp */,
+				A0A7B2F21EF1AC1C00E59FA5 /* engine.hpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
+				A0A7B2F31EF1AC1C00E59FA5 /* engine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
