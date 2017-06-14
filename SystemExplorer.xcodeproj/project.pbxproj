@@ -7,40 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7300AA8A1B82432100FCCEE3 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7300AA881B82432100FCCEE3 /* camera.cpp */; };
-		734A4EE01B74F25400C8518E /* triangle.vs in Resources */ = {isa = PBXBuildFile; fileRef = 734A4EDF1B74F25400C8518E /* triangle.vs */; };
-		734A4EE21B74F26700C8518E /* triangle.frag in Resources */ = {isa = PBXBuildFile; fileRef = 734A4EE11B74F26700C8518E /* triangle.frag */; };
-		734A4EE51B74F3B300C8518E /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 734A4EE41B74F3B300C8518E /* shader.cpp */; };
-		734A4EEB1B75061B00C8518E /* triangle.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734A4EDF1B74F25400C8518E /* triangle.vs */; };
-		734A4EEC1B75061D00C8518E /* triangle.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734A4EE11B74F26700C8518E /* triangle.frag */; };
+		7300AA951B828DF000FCCEE3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7300AA941B828DF000FCCEE3 /* README.md */; };
+		7300AA9A1B8292DB00FCCEE3 /* libpng16.16.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7300AA991B8292DB00FCCEE3 /* libpng16.16.dylib */; };
+		7300AA9E1B82954400FCCEE3 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7300AA9D1B82954400FCCEE3 /* arial.ttf */; };
+		7300AAA01B82956800FCCEE3 /* arial.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7300AA9D1B82954400FCCEE3 /* arial.ttf */; };
 		734A4EEE1B75081600C8518E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734A4EED1B75081600C8518E /* Cocoa.framework */; };
 		73BA4B001B66C33300EF8213 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73BA4AFF1B66C33300EF8213 /* main.cpp */; };
 		73BA4B1D1B66C73B00EF8213 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA4B1C1B66C73B00EF8213 /* OpenGL.framework */; };
-		73BA4B3C1B67F91400EF8213 /* libGLEW.1.12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */; };
-		73BA4B3E1B67F92700EF8213 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */; };
-		73BA4B3F1B67F93000EF8213 /* libglfw3.3.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		73BA4B401B67F93300EF8213 /* libGLEW.1.12.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		73F7B2061B7A36D300A42C29 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B1F81B7A36D300A42C29 /* image_DXT.c */; };
-		73F7B2071B7A36D300A42C29 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B1FA1B7A36D300A42C29 /* image_helper.c */; };
-		73F7B20A1B7A36D300A42C29 /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B1FF1B7A36D300A42C29 /* SOIL.c */; };
-		73F7B20B1B7A36D300A42C29 /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B2011B7A36D300A42C29 /* stb_image_aug.c */; };
 		73F7B2101B7B067E00A42C29 /* ruby.png in Resources */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
 		73F7B2111B7B068500A42C29 /* ruby.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73F7B20F1B7B067E00A42C29 /* ruby.png */; };
-		73F7B3891B7E727300A42C29 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B3871B7E727300A42C29 /* texture.cpp */; };
-		73F7B38F1B804B6300A42C29 /* cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B38D1B804B6300A42C29 /* cube.cpp */; };
 		73F7B3911B81413E00A42C29 /* checkerboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 73F7B3901B81413E00A42C29 /* checkerboard.png */; };
 		73F7B3921B81414D00A42C29 /* checkerboard.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73F7B3901B81413E00A42C29 /* checkerboard.png */; };
+		A000481A1D38C99F00F5C5A1 /* libGLEW.1.13.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A00048191D38C99F00F5C5A1 /* libGLEW.1.13.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A000481C1D38C9E100F5C5A1 /* libpng16.16.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A000481B1D38C9E100F5C5A1 /* libpng16.16.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A000481E1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A000481D1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A00048201D38CAB500F5C5A1 /* libfreetype.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A000481F1D38CAB500F5C5A1 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A00048211D38CBDC00F5C5A1 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A000481D1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib */; };
+		A00048221D38CC0000F5C5A1 /* libGLEW.1.13.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A00048191D38C99F00F5C5A1 /* libGLEW.1.13.0.dylib */; };
+		A00048231D38CC1800F5C5A1 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A000481F1D38CAB500F5C5A1 /* libfreetype.6.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7300AA9F1B82955B00FCCEE3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				7300AAA01B82956800FCCEE3 /* arial.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		734A4EEA1B75061200C8518E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = shaders;
 			dstSubfolderSpec = 7;
 			files = (
-				734A4EEC1B75061D00C8518E /* triangle.frag in CopyFiles */,
-				734A4EEB1B75061B00C8518E /* triangle.vs in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +53,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				73BA4B3F1B67F93000EF8213 /* libglfw3.3.1.dylib in CopyFiles */,
-				73BA4B401B67F93300EF8213 /* libGLEW.1.12.0.dylib in CopyFiles */,
+				A00048201D38CAB500F5C5A1 /* libfreetype.6.dylib in CopyFiles */,
+				A000481E1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib in CopyFiles */,
+				A000481C1D38C9E100F5C5A1 /* libpng16.16.dylib in CopyFiles */,
+				A000481A1D38C99F00F5C5A1 /* libGLEW.1.13.0.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,35 +74,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7300AA881B82432100FCCEE3 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = camera.cpp; path = src/camera.cpp; sourceTree = "<group>"; };
-		7300AA891B82432100FCCEE3 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = camera.h; path = src/camera.h; sourceTree = "<group>"; };
-		734A4EDF1B74F25400C8518E /* triangle.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = triangle.vs; path = src/shaders/triangle.vs; sourceTree = "<group>"; };
-		734A4EE11B74F26700C8518E /* triangle.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = triangle.frag; path = src/shaders/triangle.frag; sourceTree = "<group>"; };
-		734A4EE31B74F31A00C8518E /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = shader.h; path = src/shader.h; sourceTree = "<group>"; };
-		734A4EE41B74F3B300C8518E /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shader.cpp; path = src/shader.cpp; sourceTree = "<group>"; };
+		7300AA941B828DF000FCCEE3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7300AA991B8292DB00FCCEE3 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = /usr/local/Cellar/libpng/1.6.17/lib/libpng16.16.dylib; sourceTree = "<absolute>"; };
+		7300AA9D1B82954400FCCEE3 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = arial.ttf; path = fonts/arial.ttf; sourceTree = "<group>"; };
 		734A4EED1B75081600C8518E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		73BA4AF71B66C33300EF8213 /* SystemExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BA4AFB1B66C33300EF8213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73BA4AFF1B66C33300EF8213 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
 		73BA4B1C1B66C73B00EF8213 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.12.0.dylib; path = ../../../../../usr/local/Cellar/glew/1.12.0/lib/libGLEW.1.12.0.dylib; sourceTree = "<group>"; };
-		73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = ../../../../../usr/local/Cellar/glfw3/3.1.1/lib/libglfw3.3.1.dylib; sourceTree = "<group>"; };
-		73F7B1F81B7A36D300A42C29 /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
-		73F7B1F91B7A36D300A42C29 /* image_DXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_DXT.h; sourceTree = "<group>"; };
-		73F7B1FA1B7A36D300A42C29 /* image_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
-		73F7B1FB1B7A36D300A42C29 /* image_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_helper.h; sourceTree = "<group>"; };
-		73F7B1FF1B7A36D300A42C29 /* SOIL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SOIL.c; sourceTree = "<group>"; };
-		73F7B2001B7A36D300A42C29 /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
-		73F7B2011B7A36D300A42C29 /* stb_image_aug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image_aug.c; sourceTree = "<group>"; };
-		73F7B2021B7A36D300A42C29 /* stb_image_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_aug.h; sourceTree = "<group>"; };
-		73F7B2031B7A36D300A42C29 /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
-		73F7B2041B7A36D300A42C29 /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
 		73F7B20F1B7B067E00A42C29 /* ruby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ruby.png; path = textures/ruby.png; sourceTree = "<group>"; };
-		73F7B3871B7E727300A42C29 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture.cpp; path = src/texture.cpp; sourceTree = "<group>"; };
-		73F7B3881B7E727300A42C29 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture.h; path = src/texture.h; sourceTree = "<group>"; };
-		73F7B38D1B804B6300A42C29 /* cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cube.cpp; path = src/cube.cpp; sourceTree = "<group>"; };
-		73F7B38E1B804B6300A42C29 /* cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cube.h; path = src/cube.h; sourceTree = "<group>"; };
 		73F7B3901B81413E00A42C29 /* checkerboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkerboard.png; path = textures/checkerboard.png; sourceTree = "<group>"; };
+		A00048191D38C99F00F5C5A1 /* libGLEW.1.13.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.13.0.dylib; path = /usr/local/Cellar/glew/1.13.0/lib/libGLEW.1.13.0.dylib; sourceTree = "<absolute>"; };
+		A000481B1D38C9E100F5C5A1 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = /usr/local/Cellar/libpng/1.6.21/lib/libpng16.16.dylib; sourceTree = "<absolute>"; };
+		A000481D1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = /usr/local/Cellar/glfw3/3.1.2/lib/libglfw3.3.1.dylib; sourceTree = "<absolute>"; };
+		A000481F1D38CAB500F5C5A1 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = /usr/local/Cellar/freetype/2.6.3/lib/libfreetype.6.dylib; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +95,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00048231D38CC1800F5C5A1 /* libfreetype.6.dylib in Frameworks */,
+				A00048221D38CC0000F5C5A1 /* libGLEW.1.13.0.dylib in Frameworks */,
+				A00048211D38CBDC00F5C5A1 /* libglfw3.3.1.dylib in Frameworks */,
+				7300AA9A1B8292DB00FCCEE3 /* libpng16.16.dylib in Frameworks */,
 				734A4EEE1B75081600C8518E /* Cocoa.framework in Frameworks */,
-				73BA4B3E1B67F92700EF8213 /* libglfw3.3.1.dylib in Frameworks */,
-				73BA4B3C1B67F91400EF8213 /* libGLEW.1.12.0.dylib in Frameworks */,
 				73BA4B1D1B66C73B00EF8213 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,21 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		734A4EDE1B74F22100C8518E /* shaders */ = {
+		7300AA9C1B8294F800FCCEE3 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				734A4EDF1B74F25400C8518E /* triangle.vs */,
-				734A4EE11B74F26700C8518E /* triangle.frag */,
+				7300AA9D1B82954400FCCEE3 /* arial.ttf */,
 			);
-			name = shaders;
+			name = fonts;
 			sourceTree = "<group>";
 		};
 		73BA4AEE1B66C33300EF8213 = {
 			isa = PBXGroup;
 			children = (
 				73BA4B231B66D06D00EF8213 /* src */,
-				73F7B1F61B7A36A800A42C29 /* lib */,
 				73F7B20D1B7A377C00A42C29 /* textures */,
+				7300AA9C1B8294F800FCCEE3 /* fonts */,
+				7300AA941B828DF000FCCEE3 /* README.md */,
 				73BA4AF91B66C33300EF8213 /* SystemExplorer */,
 				73BA4AF81B66C33300EF8213 /* Products */,
 				73BA4B1E1B66C75000EF8213 /* Frameworks */,
@@ -164,8 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				734A4EED1B75081600C8518E /* Cocoa.framework */,
-				73BA4B3D1B67F92700EF8213 /* libglfw3.3.1.dylib */,
-				73BA4B3B1B67F91400EF8213 /* libGLEW.1.12.0.dylib */,
+				A000481B1D38C9E100F5C5A1 /* libpng16.16.dylib */,
+				A00048191D38C99F00F5C5A1 /* libGLEW.1.13.0.dylib */,
+				A000481D1D38CA1D00F5C5A1 /* libglfw3.3.1.dylib */,
+				A000481F1D38CAB500F5C5A1 /* libfreetype.6.dylib */,
 				73BA4B1C1B66C73B00EF8213 /* OpenGL.framework */,
 			);
 			name = Frameworks;
@@ -175,44 +169,9 @@
 		73BA4B231B66D06D00EF8213 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				734A4EDE1B74F22100C8518E /* shaders */,
 				73BA4AFF1B66C33300EF8213 /* main.cpp */,
-				734A4EE41B74F3B300C8518E /* shader.cpp */,
-				734A4EE31B74F31A00C8518E /* shader.h */,
-				73F7B3871B7E727300A42C29 /* texture.cpp */,
-				73F7B3881B7E727300A42C29 /* texture.h */,
-				73F7B38D1B804B6300A42C29 /* cube.cpp */,
-				73F7B38E1B804B6300A42C29 /* cube.h */,
-				7300AA881B82432100FCCEE3 /* camera.cpp */,
-				7300AA891B82432100FCCEE3 /* camera.h */,
 			);
 			name = src;
-			sourceTree = "<group>";
-		};
-		73F7B1F61B7A36A800A42C29 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				73F7B1F71B7A36D300A42C29 /* soil */,
-			);
-			name = lib;
-			sourceTree = "<group>";
-		};
-		73F7B1F71B7A36D300A42C29 /* soil */ = {
-			isa = PBXGroup;
-			children = (
-				73F7B1F81B7A36D300A42C29 /* image_DXT.c */,
-				73F7B1F91B7A36D300A42C29 /* image_DXT.h */,
-				73F7B1FA1B7A36D300A42C29 /* image_helper.c */,
-				73F7B1FB1B7A36D300A42C29 /* image_helper.h */,
-				73F7B1FF1B7A36D300A42C29 /* SOIL.c */,
-				73F7B2001B7A36D300A42C29 /* SOIL.h */,
-				73F7B2011B7A36D300A42C29 /* stb_image_aug.c */,
-				73F7B2021B7A36D300A42C29 /* stb_image_aug.h */,
-				73F7B2031B7A36D300A42C29 /* stbi_DDS_aug.h */,
-				73F7B2041B7A36D300A42C29 /* stbi_DDS_aug_c.h */,
-			);
-			name = soil;
-			path = lib/soil;
 			sourceTree = "<group>";
 		};
 		73F7B20D1B7A377C00A42C29 /* textures */ = {
@@ -238,6 +197,7 @@
 				734A4EE91B74F5A300C8518E /* ShellScript */,
 				734A4EEA1B75061200C8518E /* CopyFiles */,
 				73F7B20E1B7B066300A42C29 /* CopyFiles */,
+				7300AA9F1B82955B00FCCEE3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -254,7 +214,7 @@
 		73BA4AEF1B66C33300EF8213 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Sean Eshbaugh";
 				TargetAttributes = {
 					73BA4AF61B66C33300EF8213 = {
@@ -286,9 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F7B3911B81413E00A42C29 /* checkerboard.png in Resources */,
-				734A4EE01B74F25400C8518E /* triangle.vs in Resources */,
-				734A4EE21B74F26700C8518E /* triangle.frag in Resources */,
 				73F7B2101B7B067E00A42C29 /* ruby.png in Resources */,
+				7300AA9E1B82954400FCCEE3 /* arial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +265,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "install_name_tool -id @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libglfw3.3.1.dylib\"\ninstall_name_tool -id @executable_path/../Frameworks/libGLEW.1.12.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libGLEW.1.12.0.dylib\"\ninstall_name_tool -change /usr/local/lib/libglfw3.3.dylib @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libGLEW.1.12.0.dylib @executable_path/../Frameworks/libGLEW.1.12.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libglfw3.3.1.dylib\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libGLEW.1.12.0.dylib\"";
+			shellScript = "install_name_tool -id @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libglfw3.3.1.dylib\"\ninstall_name_tool -id @executable_path/../Frameworks/libGLEW.1.12.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libGLEW.1.13.0.dylib\"\ninstall_name_tool -id @executable_path/../Frameworks/libfreetype.6.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libfreetype.6.dylib\"\ninstall_name_tool -id @executable_path/../Frameworks/libpng16.16.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libpng16.16.dylib\"\ninstall_name_tool -change /usr/local/lib/libglfw3.3.dylib @executable_path/../Frameworks/libglfw3.3.1.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libGLEW.1.13.0.dylib @executable_path/../Frameworks/libGLEW.1.13.0.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libfreetype.6.dylib @executable_path/../Frameworks/libfreetype.6.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libpng16.16.dylib @executable_path/../Frameworks/libpng16.16.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libfreetype.6.dylib\"\ninstall_name_tool -change /usr/local/lib/libpng16.16.dylib @executable_path/../Frameworks/libpng16.16.dylib \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libglfw3.3.1.dylib\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libGLEW.1.13.0.dylib\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libfreetype.6.dylib\"\ncodesign --force --sign - --preserve-metadata=identifier,entitlements \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/libpng16.16.dylib\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -315,15 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F7B38F1B804B6300A42C29 /* cube.cpp in Sources */,
-				734A4EE51B74F3B300C8518E /* shader.cpp in Sources */,
-				73F7B2071B7A36D300A42C29 /* image_helper.c in Sources */,
 				73BA4B001B66C33300EF8213 /* main.cpp in Sources */,
-				7300AA8A1B82432100FCCEE3 /* camera.cpp in Sources */,
-				73F7B20A1B7A36D300A42C29 /* SOIL.c in Sources */,
-				73F7B3891B7E727300A42C29 /* texture.cpp in Sources */,
-				73F7B2061B7A36D300A42C29 /* image_DXT.c in Sources */,
-				73F7B20B1B7A36D300A42C29 /* stb_image_aug.c in Sources */,
+				7300AA951B828DF000FCCEE3 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +303,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -419,17 +372,21 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
+					/usr/local/include/freetype2,
 				);
 				INFOPLIST_FILE = SystemExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@rpath/libGLEW.1.12.0.dylib @rpath/libglfw3.3.1.dylib";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/glfw3/3.1.1/lib,
-					/usr/local/Cellar/glew/1.12.0/lib,
+					/usr/local/Cellar/glfw3/3.1.2/lib,
+					/usr/local/Cellar/glew/1.13.0/lib,
 					"$(PROJECT_DIR)/SystemExplorer.xcodeproj",
 					"$(PROJECT_DIR)/lib",
+					/usr/local/Cellar/freetype/2.6.3/lib,
+					/usr/local/Cellar/libpng/1.6.21/lib,
 				);
 				OTHER_LDFLAGS = "-headerpad_max_install_names";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seaneshbaugh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -444,17 +401,21 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
+					/usr/local/include/freetype2,
 				);
 				INFOPLIST_FILE = SystemExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@rpath/libGLEW.1.12.0.dylib @rpath/libglfw3.3.1.dylib";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/glfw3/3.1.1/lib,
-					/usr/local/Cellar/glew/1.12.0/lib,
+					/usr/local/Cellar/glfw3/3.1.2/lib,
+					/usr/local/Cellar/glew/1.13.0/lib,
 					"$(PROJECT_DIR)/SystemExplorer.xcodeproj",
 					"$(PROJECT_DIR)/lib",
+					/usr/local/Cellar/freetype/2.6.3/lib,
+					/usr/local/Cellar/libpng/1.6.21/lib,
 				);
 				OTHER_LDFLAGS = "-headerpad_max_install_names";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seaneshbaugh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
