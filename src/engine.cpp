@@ -5,9 +5,7 @@ Engine::Engine() {
 }
 
 Engine::~Engine() {
-    if (this->camera) {
-        delete this->camera;
-    }
+    delete this->camera;
 }
 
 void Engine::Start() {
